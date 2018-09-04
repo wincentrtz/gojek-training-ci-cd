@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.guestbook.controllers.GuestBookControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-09-04T04:12:24" hostname="Faizals-MacBook-Pro.local" time="0.045">
+<testsuite name="com.guestbook.controllers.GuestBookControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-09-04T04:16:22" hostname="Faizals-MacBook-Pro.local" time="0.042">
   <properties/>
-  <testcase name="shouldCallGuestBookService" classname="com.guestbook.controllers.GuestBookControllerTest" time="0.045"/>
+  <testcase name="shouldCallGuestBookService" classname="com.guestbook.controllers.GuestBookControllerTest" time="0.042"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
