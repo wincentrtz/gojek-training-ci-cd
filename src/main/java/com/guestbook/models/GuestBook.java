@@ -16,4 +16,19 @@ public class GuestBook {
         this.comment = comment;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public Date getDatetime() {
+        return datetime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getComment() {
+        return comment;
+    }
 }

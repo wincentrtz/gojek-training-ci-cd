@@ -18,8 +18,8 @@ public class GuestBookRepository {
         return currentId;
     }
 
-    public Object get() {
-        return null;
+    public List<GuestBook> get() {
+        return guestBookList;
     }
 
     public Object get(Integer id) {

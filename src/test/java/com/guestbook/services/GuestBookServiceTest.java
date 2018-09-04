@@ -29,4 +29,13 @@ public class GuestBookServiceTest {
 
         verify(repositoryMock, times(1)).save(anyString(), anyString());
     }
+
+    @Test
+    public void shouldCallGuestBookRepositoryGet() {
+        GuestBookService service = new GuestBookService(repositoryMock);
+
+        service.get();
+
+        verify(repositoryMock, times(1)).get();
+    }
 }

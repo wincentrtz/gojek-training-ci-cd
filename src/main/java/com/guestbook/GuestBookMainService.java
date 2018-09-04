@@ -8,6 +8,7 @@ import com.guestbook.services.GuestBookService;
 
 import static spark.Spark.port;
 import static spark.Spark.post;
+import static spark.Spark.get;
 
 public class GuestBookMainService {
 
@@ -21,6 +22,7 @@ public class GuestBookMainService {
 
         port(4000);
         post("/internal/post/comment", guestBookController::save, transformer);
+        get("/internal/get", guestBookController::get, transformer);
     }
 
 }

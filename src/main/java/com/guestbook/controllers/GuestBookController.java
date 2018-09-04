@@ -19,7 +19,7 @@ public class GuestBookController {
     }
 
     public Object get(Request request, Response response) {
-        return null;
+        return new GuestBookResponse(service.get());
     }
 
     public Object getAll(Request request, Response response) {
