@@ -20,9 +20,17 @@ public class GuestBookMainService {
         GuestBookController guestBookController = new GuestBookController(gson, guestBookService);
         GuestBookTransformer transformer = new GuestBookTransformer();
 
-        port(4000);
+        port(getHerokuAssignedPort());
         post("/internal/post/comment", guestBookController::save, transformer);
         get("/internal/get", guestBookController::get, transformer);
+    }
+
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567;
     }
 
 }
