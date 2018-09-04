@@ -37,7 +37,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git push https://heroku:4838e5ef-46eb-43ed-8481-ebacbc5863e8@git.heroku.com/gojek-training.gitd master
+            git push https://heroku:4838e5ef-46eb-43ed-8481-ebacbc5863e8@git.heroku.com/gojek-training.git master
 workflows:
   version: 2
   build-deploy:
