@@ -32,8 +32,10 @@ jobs:
   deploy:
       docker:
         - image: buildpack-deps:trusty
+        - image: circleci/openjdk:8-jdk
       steps:
         - checkout
+        - run: gradle clean build
         - run:
             name: Deploy Master to Heroku
             command: |
