@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp build/classes:build/libs/* com.guestbook.GuestBookMainService
+web: java -jar java-guestbook-1.0-SNAPSHOT.jar
