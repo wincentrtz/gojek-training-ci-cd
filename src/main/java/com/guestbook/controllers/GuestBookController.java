@@ -19,7 +19,7 @@ public class GuestBookController {
     }
 
     public Object get(Request request, Response response) {
-        return new GuestBookResponse(service.get());
+        return gson.toJson(new GuestBookResponse(service.get()));
     }
 
     public Object getAll(Request request, Response response) {
@@ -29,7 +29,7 @@ public class GuestBookController {
     public Object save(Request request, Response response) {
         CommentRequest commentRequest = gson.fromJson(request.body(), CommentRequest.class);
         Integer id = service.save(commentRequest);
-        return new GuestBookResponse(new SaveResponse(id));
+        return gson.toJson(new GuestBookResponse(new SaveResponse(id)));
     }
 
     public Object delete(Request request, Response response) {

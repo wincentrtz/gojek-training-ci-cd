@@ -1,8 +1,8 @@
 package com.guestbook;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.guestbook.controllers.GuestBookController;
-import com.guestbook.controllers.GuestBookTransformer;
 import com.guestbook.repositories.GuestBookRepository;
 import com.guestbook.services.GuestBookService;
 
@@ -14,15 +14,14 @@ public class GuestBookMainService {
 
     public static void main(String[] args) {
 
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().serializeNulls().create();
         GuestBookRepository guestBookRepository = new GuestBookRepository();
         GuestBookService guestBookService = new GuestBookService(guestBookRepository);
         GuestBookController guestBookController = new GuestBookController(gson, guestBookService);
-        GuestBookTransformer transformer = new GuestBookTransformer();
 
         port(getHerokuAssignedPort());
-        post("/internal/post/comment", guestBookController::save, transformer);
-        get("/internal/get", guestBookController::get, transformer);
+        post("/internal/post/comment", guestBookController::save);
+        get("/internal/get", guestBookController::get);
     }
 
     static int getHerokuAssignedPort() {
