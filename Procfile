@@ -1,1 +1,1 @@
-web: java -jar java-guestbook-1.0-SNAPSHOT.jar
+web: java -jar build/libs/java-guestbook-1.0-SNAPSHOT.jar
