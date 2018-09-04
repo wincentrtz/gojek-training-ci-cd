@@ -38,6 +38,7 @@ jobs:
             name: Deploy Master to Heroku
             command: |
               git push https://heroku:fdc863e6-0502-4946-bd46-2b6f722f7fd8@git.heroku.com/java-guestbook.git master
+              java -jar ./target/java-guestbook-1.0-jar-with-dependencies.jar
 
 workflows:
   version: 2
